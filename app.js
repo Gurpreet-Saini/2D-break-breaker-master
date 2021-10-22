@@ -115,8 +115,11 @@ function collisionDetection(){
                     b.status = 0;
                     score++;
                     if (score === brickRowCount*brickColumnCount){
-                        alert('Congratulations!! You\'ve won!');
+                          swal("Congratulation!", "We win", "success");
+                        
+                       setTimeout(function(){
                         document.location.reload();
+                      }, 1000);
                     }
                 }
             }
@@ -147,8 +150,13 @@ function draw(){
         }
         //if no paddle hit, body of canvas is hit ==> game over
         else {
-            alert('GAME OVER!!');
-            document.location.reload();
+                  
+            swal("OOPS..", "GAME OVER 😕", "error");
+         
+            setTimeout(function(){
+                document.location.reload();
+              }, 1000);
+            
         }
     }
     //bottom wall
